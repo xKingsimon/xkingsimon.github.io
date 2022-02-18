@@ -1,3 +1,67 @@
+:root {
+--arrow_dist : 10px;
+--bg-slate-400	: rgb(148 163 184);	
+--bg-slate-500	: rgb(100 116 139);	
+--bg-slate-600	: rgb(71 85 105);	
+--bg-slate-700	: rgb(51 65 85);	
+--bg-slate-800	: rgb(30 41 59);	
+--bg-slate-900	: rgb(15 23 42);
+--bg-sky-300  : rgb(125 211 252);	
+--bg-sky-400	: rgb(56 189 248);	
+--bg-sky-500	: rgb(14 165 233);	
+--bg-sky-600	: rgb(2 132 199);	
+--bg-sky-700	: rgb(3 105 161);	
+--bg-sky-800	: rgb(7 89 133);	
+--bg-sky-900	: rgb(12 74 110); 
+}
+body {
+  margin: 0;
+  background-color: var(--bg-slate-900);
+}
+#wrapper {
+  background-image: url(https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg);
+  background-size: 100% 100%;
+  width: 80%;
+  margin: auto;
+  height: 2000px;
+  background-color: var(--bg-slate-800);
+}
+body > * {
+  font-family: 'Inter', sans-serif;
+}
+#navbar {
+  height: auto;
+  overflow: hidden;
+  background-color: var(--bg-slate-900);
+  border-bottom: 1px solid var(--bg-slate-700);
+  transition: box-shadow 0.15s ease-in;
+}
+#navbar > ul {
+  margin-top: 0;
+  padding: 0px;
+  margin-bottom: 0; 
+ list-style: none;
+  display: flex;
+}
+#navbar > ul > li {
+  font-size: 18px;
+  color: var(--bg-slate-400);
+  padding: 1rem 2rem;
+  border-right: 1px solid var(--bg-slate-700);
+  user-select: none;
+  transition: all 0.15s ease-in;
+}
+#navbar > ul > li:hover {
+  color: white;
+  padding-left: 2.2rem;
+  padding-right: 2.2rem;
+}
+.sticky {
+  box-shadow: 100px 0px 60px var(--bg-slate-900);
+  width: 100%;
+  position: fixed;
+  top: 0px;
+}
 .svg-triangle {
   stroke: var(--bg-sky-900);
   stroke-width: 15px;
