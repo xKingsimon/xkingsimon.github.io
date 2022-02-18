@@ -1,0 +1,39 @@
+.svg-triangle {
+  stroke: var(--bg-sky-900);
+  stroke-width: 15px;
+  fill: var(--bg-sky-900);
+  transition: all 1.5s ease-in-out;
+  opacity: 0.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#transmission {
+  padding: 100px 0 10px 0;
+  display: flex;
+}
+#transmission > div {
+  display: flex;
+  flex-direction: column;
+}
+#transmission > div > p {
+  color: var(--bg-slate-400);
+  font-size: 46px;
+  text-align: center;
+  margin: 10px;
+}
+#transmission:hover #svg-triangle1 {
+  transform: translate(calc(0.6*var(--arrow_dist)), 0px);
+}
+#transmission:hover #svg-triangle2 {
+  transform: translate(calc(0.8*var(--arrow_dist)), 0px);
+}
+#transmission:hover #svg-triangle3 {
+  transform: translate(var(--arrow_dist), 0px);
+}
+.img-computer{
+  height: 150px;
+  width: auto;
+}
+p {
+  color: white;
+}
