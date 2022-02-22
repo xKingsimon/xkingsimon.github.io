@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  $("#importNavbar").load("/global/navbar.html");
   var navbbox_bot = document.getElementById("navbar").getBoundingClientRect().height;
   var navHeight = $("#navbar").outerHeight();
   $(window).scroll(function () {
