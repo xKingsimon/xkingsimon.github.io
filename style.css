@@ -19,6 +19,7 @@ body {
   background-color: var(--bg-slate-900);
 }
 #wrapper {
+  overflow: auto;
   background-image: url(https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg);
   background-size: 100% 100%;
   width: 80%;
@@ -29,38 +30,6 @@ body {
 body > * {
   font-family: 'Inter', sans-serif;
 }
-#navbar {
-  height: auto;
-  overflow: hidden;
-  background-color: var(--bg-slate-900);
-  border-bottom: 1px solid var(--bg-slate-700);
-  transition: box-shadow 0.15s ease-in;
-}
-#navbar > ul {
-  margin-top: 0;
-  padding: 0px;
-  margin-bottom: 0;
-  list-style: none;
-  display: flex;
-}
-#navbar > ul > li {
-  font-size: 18px;
-  color: var(--bg-slate-400);
-  padding: 1rem 2rem;
-  border-right: 1px solid var(--bg-slate-700);
-  user-select: none;
-  transition: color,padding 0.15s ease-in;
-}
-#navbar > ul > li:hover {
-  color: white;
-  padding-left: 2.2rem;
-  padding-right: 2.2rem;
-}
-.sticky {
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
-  width: 100%;
-  position: fixed;
-  transition: box-shadow 0.3s;
 ul {
   color: white;
   font-size: 20px;
