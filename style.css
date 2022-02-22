@@ -46,8 +46,12 @@ p {
 }
 #navbarBanner > img {
   object-fit: contain;
-  filter: blur(2.2px);
+  filter: blur(2.5px);
   width: 100vw;
+  transition: filter ease-in-out 0.6s;
+}
+#navbarBanner:hover > img {
+  filter: none;
 }
 #navbarBanner > div {
   position: absolute;
