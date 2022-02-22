@@ -26,10 +26,6 @@ body {
   height: 2000px;
   background-color: var(--bg-slate-800);
 }
-#navbar > ul > a {
-  text-decoration: none;
-  color:inherit;
-}
 body > * {
   font-family: 'Inter', sans-serif;
 }
