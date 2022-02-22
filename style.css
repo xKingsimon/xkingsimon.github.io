@@ -28,7 +28,7 @@ body {
   background-color: var(--bg-slate-800);
 }
 body > * {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 ul {
   color: white;
@@ -38,4 +38,30 @@ p {
   font-size: 20px;
   color: white;
   margin: 15px;
+}
+#navbarBanner {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+}
+#navbarBanner > img {
+  object-fit: contain;
+  filter: blur(2.2px);
+  width: 100vw;
+}
+#navbarBanner > div {
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: calc(40% - 7vw);
+  text-align: center;
+  vertical-align: middle;
+  height: inherit;
+  width: 100%;
+}
+#navbarBanner > div > h1 {
+  font-size: 7vw;
+  color: black;
+  user-select: none;
 }
