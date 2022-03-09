@@ -20,12 +20,12 @@ body {
 }
 #wrapper {
   overflow: auto;
-  background-image: url(https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg);
+  background: rgb(26,26,64);
+  background: linear-gradient(45deg, rgba(26,26,64,1) 0%, rgba(9,9,121,1) 50%, rgba(39,0,130,1) 100%);
   background-size: 100% 100%;
   width: 80%;
   margin: auto;
   height: 2000px;
-  background-color: var(--bg-slate-800);
 }
 body > * {
   font-family: "Inter", sans-serif;
