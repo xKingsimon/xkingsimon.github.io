@@ -5,12 +5,12 @@ $(document).ready(function() {
         $(window).scroll(function() {
             console.log("Current X: "+$(document).scrollTop())
             console.log("Placeholder X: "+navbbox_bot)
-            if ($(document).scrollTop() >= navbbox_bot) {
+            if ($(document).scrollTop() > navbbox_bot) {
                 if (!$("#navbar").hasClass("sticky")) {
                     $("#navbar").addClass("sticky");
                     $("#navbarPlaceholder").css("height", navHeight);
                 }
-            } else if ($(document).scrollTop() < navbbox_bot) {
+            } else if ($(document).scrollTop() <= navbbox_bot) {
                 $("#navbar").removeClass("sticky");
                 $("#navbarPlaceholder").css("height", 0);
             }

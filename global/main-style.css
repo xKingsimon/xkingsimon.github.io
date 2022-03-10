@@ -18,6 +18,9 @@ body {
   margin: 0;
   background-color: var(--bg-slate-900);
 }
+.flex {
+  display: flex;
+}
 #wrapper {
   overflow: auto;
   background-image: url(https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg);
@@ -34,7 +37,7 @@ ul {
   color: white;
   font-size: 20px;
 }
-p {
+p,a {
   font-size: 20px;
   color: white;
   margin: 15px;
