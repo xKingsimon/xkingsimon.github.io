@@ -1,8 +1,13 @@
 a.navbarLink {
     text-decoration: none;
+    color: white;
     display: block;
-    padding: 10px;
-    margin: 10px;
+    padding: 20px;
+    margin: 0px;
+    font-weight: 420;
+}
+a.navbarLink:hover {
+    color: #b9b9b9;
 }
 
 #navbar>ul {
@@ -16,7 +21,7 @@ a.navbarLink {
 }
 
 #navbar>ul li:hover {
-    background: var(--bg-slate-700);
+    background: var(--sky-select);
 }
 
 #navbar>ul li:hover ul {
@@ -30,7 +35,7 @@ a.navbarLink {
 }
 
 #navbar>ul li ul li {
-    background: var(--bg-slate-700);
+    background: var(--sky);
     display: block;
 }
 
@@ -42,12 +47,11 @@ a.navbarLink {
 }
 
 #navbar>ul li ul li:hover {
-    background: var(--bg-slate-800);
+    background: var(--sky-select);
 }
 
 #navbar {
-    background-color: var(--bg-slate-900);
-    border-bottom: 1px solid var(--bg-slate-700);
+    background-color: var(--sky);
     box-shadow: none;
     display: flex;
     transition: box-shadow 0.15s ease-in;

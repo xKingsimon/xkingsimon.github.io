@@ -1,7 +1,7 @@
 .svg-triangle {
-    stroke: var(--bg-sky-900);
-    stroke-width: 15px;
-    fill: var(--bg-sky-900);
+    stroke: var(--sky-light);
+    stroke-width: 8px;
+    fill: var(--sky-light);
     transition: all 1.5s ease-in-out;
     opacity: 0.8;
     stroke-linecap: round;
@@ -9,19 +9,25 @@
 }
 
 #bernesLee {
-    border: 7px solid var(--bg-slate-800);
+    float: right;
+    border: 5px solid var(--sky);
     border-radius: 5px;
     margin: 15px;
 }
 
 #bernesLee>img {
-    height: 400px;
+    min-width: 176px;
+    width:20vw;
 }
 
 #bernesLee>p {
-    margin: 4px;
-    font-size: 18px;
+    margin: 0;
+    padding: 5px;
+    background-color: var(--sky-light);
+    font-size: 24px;
+    color: white;
     text-align: center;
+    clear:both
 }
 
 #transmission {
@@ -35,7 +41,7 @@
 }
 
 #transmission>div>p {
-    color: var(--bg-slate-400);
+    color: var(--sky-select);
     font-size: 46px;
     text-align: center;
     margin: 10px;
@@ -55,7 +61,7 @@
 
 #unsafeSvg {
     opacity: 0;
-    transition: opacity 2.5s;
+    transition: opacity 2s;
 }
 
 #transmission:hover #unsafeSvg {
