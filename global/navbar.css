@@ -51,10 +51,16 @@ a.navbarLink:hover {
 }
 
 #navbar {
+    z-index: 1;
+    overflow:hidden;
     background-color: var(--sky);
     box-shadow: none;
     display: flex;
     transition: box-shadow 0.15s ease-in;
+}
+
+#navbarPlaceholder {
+    z-index: 2;
 }
 
 .sticky {

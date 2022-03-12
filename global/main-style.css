@@ -16,9 +16,9 @@ body {
   overflow: auto;
   background: white;
   width: 80%;
+  min-height: 100vh;
   margin: auto;
-  height: 2000px;
-  padding-bottom: 25px;
+  padding: 25px;
 }
 body > * {
   font-family: "Inter", sans-serif;
@@ -28,7 +28,10 @@ ul {
 }
 p,a {
   font-size: 20px;
-  margin: 15px;
+  margin: 15px 0 15px 0;
+}
+.moveRight {
+  margin-left: 15px !important;
 }
 #navbarBanner {
   overflow: hidden;

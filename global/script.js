@@ -1,24 +1,34 @@
-$(document).ready(function() {
+$(window).on('load', function () {
     $("#importFooter").load("/global/footer.html")
-    $("#importNavbar").load("/global/navbar.html", function() {
+    $("#importNavbar").load("/global/navbar.html", function () {
         $(window).resize(changeNavSize);
         changeNavSize();
-        $(window).scroll(function() {
-            if ($(document).scrollTop() > navbbox_bot) {
-                if (!$("#navbar").hasClass("sticky")) {
-                    $("#navbar").addClass("sticky");
-                    $("#navbarPlaceholder").css("height", navHeight);
+        $(window).scroll(function () {
+            if ($("#navbarBanner").length) {
+                if ($(document).scrollTop() > navbbox_bot) {
+                    if (!$("#navbar").hasClass("sticky")) {
+                        $("#navbar").addClass("sticky");
+                        $("#navbarPlaceholder").css("height", navHeight);
+                    }
+                } else if ($(document).scrollTop() <= navbbox_bot) {
+                    $("#navbar").removeClass("sticky");
+                    $("#navbarPlaceholder").css("height", 0);
                 }
-            } else if ($(document).scrollTop() <= navbbox_bot) {
-                $("#navbar").removeClass("sticky");
-                $("#navbarPlaceholder").css("height", 0);
+            } else {
+                changeNavSize();
+                $("#navbarPlaceholder").css("height", navHeight);
+                $("#navbar").addClass("sticky");
             }
         });
     });
 });
 
-$.getJSON("https://api.countapi.xyz/hit/johnsdorfer.de/visits", function(response) {
-    $("#visits").text("Diese Seite wurde "+response.value+" mal geladen");
+$(window).on('beforeunload', function(){
+    $(window).scrollTop(0);
+});
+
+$.getJSON("https://api.countapi.xyz/hit/johnsdorfer.de/visits", function (response) {
+    $("#visits").text("Diese Seite wurde " + response.value + " mal geladen");
 });
 function href(url) {
     window.location.replace(url);

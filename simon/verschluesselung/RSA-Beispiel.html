@@ -5,6 +5,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/simon/verschluesselung/styles/RSA-Beispiel.css" type="text/css">
     <link rel="stylesheet" href="/global/main-style.css" type="text/css">
     <script src="/global/script.js"></script>
     <meta charset="utf-8"></meta>
@@ -17,18 +18,122 @@
 <body>
     <div id="importNavbar"></div>
     <div id="wrapper">
-        <h1>Verschlüsselungs Beispiel RSA</h1>
-        <p>Die RSA Verschlüsselung wurde von den drei Wissenschaftlern Rivest, Shamir und Adleman erfunden und nach ihren Anfangsbuchstaben benannt. Das Verfahren ist asymmetrisch und nutzt Eigenschaften von Primzahlen um einen privaten und einen öffentlichen Schlüssel zu generieren.</p>
-        <h3>1.) Primzahlen wählen</h3>
-        <p>Zuerst werden zwei Primzahlen \(p\) und \(q\) zufällig gewählt.</p>
-        <h3>2.)Produkt bestimmen</h3>
-        <p>Das Produkt aus \(p\) und \(q\) wird mit \(n=p*q\) berechnet.</p>
-        <h3>3.)In eulersche \(\varphi\)-Funktion einsetzen.</h3>
-        <p>Um die Menge an Teilfremden von \(n\) zu berechnen beutzt man \(\varphi(n)=(p-1)*(q-1)\)</p>
-        <h3>4.)Zahl \(e\) suchen</h3>
-        <p>Dannach wird eine Zahl \(e\) gesucht die zu \(\varphi(n)\) teilfremd ist, als in ihrer Primfaktorzerlegung keine gleichen Primfaktoren hat.</p>
-        <h3>5.)Inversion zu \(e\): \(d\in\mathbb{N}\) finden</h3>
-        <p>Die Zahl \(d\in\mathbb{N}\) kann mit \(d*e\equiv1\mod\varphi(n)\) bzw dem Erweiterter euklidischer Algorithmus berechnet werden.</p>
+        <h1>Verschlüsselungen Beispiel RSA</h1>
+        <p>Die RSA Verschlüsselung wurde von den drei Wissenschaftlern Rivest, Shamir und Adleman erfunden und nach ihren Anfangsbuchstaben benannt. Das Verfahren ist asymmetrisch und nutzt Eigenschaften von Primzahlen um einen privaten und einen öffentlichen
+            Schlüssel zu generieren.</p>
+        <h2>1.) Primzahlen wählen</h2>
+        <p class="moveRight">Zuerst werden zwei Primzahlen \(p\) und \(q\) zufällig gewählt.</p>
+        <h2>2.) Produkt bestimmen</h2>
+        <p class="moveRight">Das Produkt aus \(p\) und \(q\) wird mit \(n=p*q\) berechnet.</p>
+        <h2>3.) In eulersche \(\varphi\)-Funktion einsetzen.</h2>
+        <p class="moveRight">Um die Menge an Teilfremden von \(n\) zu berechnen beutzt man \(\varphi(n)=(p-1)*(q-1)\)</p>
+        <h2>4.) Zahl \(e\) suchen</h2>
+        <p class="moveRight">Dannach wird eine Zahl \(e\) gesucht die zu \(\varphi(n)\) teilfremd ist, als in ihrer Primfaktorzerlegung keine gleichen Primfaktoren hat.</p>
+        <h2>5.) Inversion zu \(e\) : \(d\in\mathbb{N}\) finden</h2>
+        <p class="moveRight">Die Zahl \(d\in\mathbb{N}\) kann mit \(d*e\equiv1\mod\varphi(n)\) bzw dem Erweiterter euklidischer Algorithmus berechnet werden.</p>
+        <br>
+        <br>
+        <h1>Rechenbeispiel</h1>
+        <h2>1.) Primzahlen wählen</h2>
+        <p class="moveRight">Zwei Primzahlen hier \(p=47\) und \(q=73\) wählen.</p>
+        <h2>2.) Produkt bestimmen</h2>
+        <p class="moveRight">Das Produkt aus \(47\) und \(73\) ist \(n=47*73=3431\)</p>
+        <h2>3.) In eulersche \(\varphi\)-Funktion einsetzen.</h2>
+        <p class="moveRight">Die Menge der Teilfremden von \(n\) ist \(\varphi(3431)=(47-1)*(73-1)=3312\)</p>
+        <h2>4.) Zahl \(e\) suchen</h2>
+        <p class="moveRight">Zuerst \(3312\) zu ihren Primfaktoren zerlegen: \(3312=2^4*3^2*23\)<br> Und dann eine zweite Zahl finden die keine gleichen Primfaktoren hat z.B. \(25=5^2\). Da 5 nicht zu 3312's Primfaktoren gehört ist \(25\) unser \(e\)
+        </p>
+        <h2>5.) Inversion zu \(e\) : \(d\in\mathbb{N}\) finden</h2>
+        <p class="moveRight">Um eine natürliche Zahl \(d\) zu finden die eine Inversion von \(25\) in \(d*25\equiv1\mod\varphi(n)\) ist, muss man den Erweiterter euklidischer Algorithmus verwenden</p>
+        <br>
+        <p class="moveRight">Eine Tabelle wird mit den Werten \(a=q\), \(b=p\), \(q\) und \(r\) angeferigt. Jede Zeile wird \(a\) durch \(b\) geteilt, das Ergebnis in \(q\) und den Rest in \(r\) eingetragen, bis der Rest 1 ergibt.</p>
+        <table class="moveRight tg">
+            <thead>
+                <tr>
+                    <th class="tg-0pky">i</th>
+                    <th class="tg-0lax">a</th>
+                    <th class="tg-0lax">b</th>
+                    <th class="tg-0lax">q</th>
+                    <th class="tg-0lax">r</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tg-0lax">1</td>
+                    <td class="tg-0lax">3312</td>
+                    <td class="tg-0lax">25</td>
+                    <td class="tg-0lax">132</td>
+                    <td class="tg-0lax">12</td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">2</td>
+                    <td class="tg-0lax">25</td>
+                    <td class="tg-0lax">12</td>
+                    <td class="tg-0lax">2</td>
+                    <td class="tg-0lax">1</td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">3</td>
+                    <td class="tg-0lax">12</td>
+                    <td class="tg-0lax">1</td>
+                    <td class="tg-0lax">12</td>
+                    <td class="tg-0lax">0</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="moveRight">Dannach wird die Tabelle um x und y erweitert. von unten anfangend ist \(x=0\) und \(y=1\). Für jede Zeile gilt \(x_{i}=y_{i+1}\) und \(y_i=x_{i+1}-q_i*y_{i+1}\)</p>
+        <table class="moveRight tg">
+            <thead>
+                <tr>
+                    <th class="tg-0pky">i</th>
+                    <th class="tg-0lax">a</th>
+                    <th class="tg-0lax">b</th>
+                    <th class="tg-0lax">q</th>
+                    <th class="tg-0lax">r</th>
+                    <th class="tg-0lax">x</th>
+                    <th class="tg-0lax">y</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tg-0lax">1</td>
+                    <td class="tg-0lax">3312</td>
+                    <td class="tg-0lax">25</td>
+                    <td class="tg-0lax">132</td>
+                    <td class="tg-0lax">12</td>
+                    <td class="tg-0lax">-2</td>
+                    <td class="tg-0lax">265</td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">2</td>
+                    <td class="tg-0lax">25</td>
+                    <td class="tg-0lax">12</td>
+                    <td class="tg-0lax">2</td>
+                    <td class="tg-0lax">1</td>
+                    <td class="tg-0lax">1</td>
+                    <td class="tg-0lax">-2</td>
+                </tr>
+                <tr>
+                    <td class="tg-0lax">3</td>
+                    <td class="tg-0lax">12</td>
+                    <td class="tg-0lax">1</td>
+                    <td class="tg-0lax">12</td>
+                    <td class="tg-0lax">0</td>
+                    <td class="tg-0lax">0</td>
+                    <td class="tg-0lax">1</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="moveRight">Das letzte \(y=265\) ist damit \(d\).</p>
+        <h1>Beispiel für die Nutzung der Verschlüsselung</h1>
+        <p class="moveRight">Der Sender der Nachricht benutzt zum erstellen den öffentlichen Schlüssel des Empfängers mit den Variablen \(e=25\) und \(n=3431\) der Empfänger hat einen privaten Schlüssel mit \(p=47\), \(q=73\) und \(d=265\)</p>
+        <h2>Erstellen der Nachricht</h2>
+        <p class="moveRight">Zuerst braucht man eine Nachricht, die Verschlüsselt werden soll z.B. abcdacb. Der Text wird dann codiert (> hier: a=1, b=2...) zu 1 2 3 4 1 3 2 und in 4er Blöcke sortiert 1234 1320.</p>
+        <h2>Codieren</h2>
+        <p class="moveRight">Das Codieren erfolgt mit dem öffentlichen Schlüssel des Empfängers. Jeder 4er Block \((b)\) wird zu einem codierten 4er Block \((cb)\) <br> \(cb=b^e\mod n\) <br> in unserem Beispiel <br> \(cb_1=1234^{25}\mod3431=285\) <br> \(cb_2=1320^{25}\mod3431=1990\)</p>
+        <h2>Decodieren</h2>
+        <p class="moveRight">Das Decodieren ist dem Codieren fast identisch, allderings wird statt dem \(e\) aus dem öffentlichen Schlüssel wird das \(d\) des privaten Schlüssels verwendet: <br>\(b=cb^d\mod n\) <br> in unserem Beispiel <br> \(b=285^{265}\mod 3431=1234\) <br> \(b=1990^{265}\mod 3431=1320\)<br>
+        Zuletzt muss der Empfänger wieder die gleiche Textcodierung nehmen um aus 1 2 3 4 1 3 2 wieder abcdacb zu erhalten.</p>
     </div>
     <div id="importFooter"></div>
 </body>
