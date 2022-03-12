@@ -1,0 +1,34 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/global/main-style.css" type="text/css">
+    <script src="/global/script.js"></script>
+    <meta charset="utf-8"></meta>
+    <meta name="description" content="Johnsdorfer.de Website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Simon Johnsdorfer">
+    <meta name="keywords" content="Markus, Markus Johnsdorfer, Johnsdorfer, Simon, Simon Johnsdorfer, modellbau, johnsdorfer, johnsdorfer.de">
+</head>
+
+<body>
+    <div id="importNavbar"></div>
+    <div id="wrapper">
+        <h1>Verschlüsselungs Beispiel RSA</h1>
+        <p>Die RSA Verschlüsselung wurde von den drei Wissenschaftlern Rivest, Shamir und Adleman erfunden und nach ihren Anfangsbuchstaben benannt. Das Verfahren ist asymmetrisch und nutzt Eigenschaften von Primzahlen um einen privaten und einen öffentlichen Schlüssel zu generieren.</p>
+        <h3>1.) Primzahlen wählen</h3>
+        <p>Zuerst werden zwei Primzahlen \(p\) und \(q\) zufällig gewählt.</p>
+        <h3>2.)Produkt bestimmen</h3>
+        <p>Das Produkt aus \(p\) und \(q\) wird mit \(n=p*q\) berechnet.</p>
+        <h3>3.)In eulersche \(\varphi\)-Funktion einsetzen.</h3>
+        <p>Um die Menge an Teilfremden von \(n\) zu berechnen beutzt man \(\varphi(n)=(p-1)*(q-1)\)</p>
+        <h3>4.)Zahl \(e\) suchen</h3>
+        <p>Dannach wird eine Zahl \(e\) gesucht die zu \(\varphi(n)\) teilfremd ist, als in ihrer Primfaktorzerlegung keine gleichen Primfaktoren hat.</p>
+        <h3>5.)Inversion zu \(e\): \(d\in\mathbb{N}\) finden</h3>
+        <p>Die Zahl \(d\in\mathbb{N}\) kann mit \(d*e\equiv1\mod\varphi(n)\) bzw dem Erweiterter euklidischer Algorithmus berechnet werden.</p>
+    </div>
+    <div id="importFooter"></div>
+</body>
