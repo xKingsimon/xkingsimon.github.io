@@ -16,7 +16,7 @@ body {
   overflow: auto;
   background: white;
   width: 80%;
-  min-height: 100vh;
+  min-height: 1000px;
   margin: auto;
   padding: 25px;
 }

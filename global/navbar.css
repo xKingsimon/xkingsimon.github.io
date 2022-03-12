@@ -62,7 +62,9 @@ a.navbarLink:hover {
 #navbarPlaceholder {
     z-index: 2;
 }
-
+.sticky>ul>li>ul {
+    position: fixed !important;
+}
 .sticky {
     top: 0px;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px !important;
