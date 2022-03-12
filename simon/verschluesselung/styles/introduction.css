@@ -8,23 +8,49 @@
     stroke-linejoin: round;
 }
 
-#bernesLee {
+.imgContainer-r {
     float: right;
     border: 5px solid var(--sky);
     border-radius: 5px;
     margin: 15px;
 }
-
-#bernesLee>img {
-    min-width: 176px;
-    width:20vw;
+.imgContainer {
+    clear: both;
+    width: fit-content;
+    border: 5px solid var(--sky);
+    border-radius: 5px;
+    margin: 15px;
+}
+.imgContainer-l {
+    float: left;
+    border: 5px solid var(--sky);
+    border-radius: 5px;
+    margin: 15px;
 }
 
-#bernesLee>p {
+.imgContainer-r>p {
     margin: 0;
     padding: 5px;
     background-color: var(--sky-light);
-    font-size: 24px;
+    font-size: 1vw;
+    color: white;
+    text-align: center;
+    clear:both
+}
+.imgContainer-l>p {
+    margin: 0;
+    padding: 5px;
+    background-color: var(--sky-light);
+    font-size: 1vw;
+    color: white;
+    text-align: center;
+    clear:both
+}
+.imgContainer>p {
+    margin: 0;
+    padding: 5px;
+    background-color: var(--sky-light);
+    font-size: 1vw;
     color: white;
     text-align: center;
     clear:both
@@ -71,6 +97,10 @@
 .img-computer {
     height: 150px;
     width: auto;
+}
+
+.inTextLink {
+    margin: 0;
 }
 
 @media only screen and (max-width: 940px) {
