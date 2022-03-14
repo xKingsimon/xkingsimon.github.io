@@ -8,6 +8,8 @@ a.navbarLink {
 }
 a.navbarLink:hover {
     color: #b9b9b9;
+    -webkit-user-drag: none;
+    user-select: none;
 }
 
 #navbar>ul {
