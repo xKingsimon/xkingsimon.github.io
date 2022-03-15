@@ -1,0 +1,42 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/global/main-style.css" type="text/css">
+    <link rel="stylesheet" href="styles/introduction.css" type="text/css">
+    <link rel="stylesheet" href="/global/navbar.css" type="text/css">
+    <script src="/global/script.js"></script>
+    <script src="scripts/introduction.js"></script>
+    <meta charset="utf-8">
+    </meta>
+    <meta name="description" content="Johnsdorfer.de Website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Simon Johnsdorfer">
+    <meta name="keywords" content="Markus, Markus Johnsdorfer, Johnsdorfer, Simon, Simon Johnsdorfer, modellbau, johnsdorfer, johnsdorfer.de">
+</head>
+
+<body>
+    <div id="importNavbar"></div>
+    <div id="wrapper">
+        <h1 class="text-center">Arten der Verschlüsselung</h1>
+        <h2>Symetrische Verschlüsselung</h2>
+        <p>Bei der symetrischen Verschlüsselung wird für die Kommunikation zwischen zwei Partnern ein Schlüssel verwendet. Ursprünglich stammt diese Methode der Verschlüsselung aus der Zeit Caesars, er ließ jeden Buchstaben seiner Nachricht um 3 Buchstaben
+            im Alphabet verschieben, sodass die Nachricht, ohne zu wissen wie man sie entschlüsselt, nutzlos für Mitleser war.
+            <br> Moderne symetrische Verschlüsselungen funktionieren auf dem selben Prinzip, allerdings wird jeder Buchstabe mit einer anderen Zahl multipliziert, das Bedeuted entweder, dass der Schlüssel länger sein muss als die Nachricht oder er sich
+            wiederhohlt.
+            <br> Vorteil der symetrischen Verschlüsselungen ist der Rechenaufwand und dadurch die Geschwindigkeit, zu den Nachteilen gehört die Tatsache, dass man für jeden neuen Kommunikationspartner auch einen neuen Schlüssel braucht und dass die Schlüssel
+            irgendwie beim Empfänger landen müssen ohne, dass ein Mithörer ihn erhält.
+        </p>
+        <h2>Asymetrische Verschlüsselung</h2>
+        <p>Zu den asymetrischen Verschlüsselungen gehört <span><a href="/simon/verschluesselung/RSA-Beispiel.html">RSA</a></span>. Bei der asymetrischen Verschlüsselung werden sich mathematische Eigenschaften und Probleme zu nutzen gemacht. Hierbei gibt
+            es einen privaten Schlüssel den nur der eigene Nutzer hat und einen öffentlichen Schlüssel, der einfach ungesichet dem Sender der Nachricht, vor dem Schreiben, gegeben werden kann. Der öffentliche Schlüssel kann zwar eine Nachricht verschlüsseln
+            aber nur beide kombiniert können sie wieder entschlüsseln.
+            <br> Vorteil ist die Sicherheit und Anpassbarkeit die geboten werden kann, ist der Schlüssel nicht sicher genug kann man ihn einfach um ein paar Ziffern verlängern. Nachteil der asymetrischen Verschlüsselung ist die Rechenleistung die benötigt
+            wird um die Schlüssel zu generieren und um die Nachricht zu entschlüsseln.
+        </p>
+        <h2>Hybride Verschlüsselungen</h2>
+        <p>Hybride Verschlüsselungen nutzen das beste aus symetrischen und asymetrischen Verschlüsselungen. Damit eine Kommunikation zu stande kommt, wird der symetrische Schlüssel asymetrisch Verschlüsselt. Dadurch wird zwar zum Start einer Verbindung viel Rechenleistung verwendet, dannach kann aber der deutlich schnellere symetrische Schlüssel verwendet werden.</p>
+    </div>
+    <div id="importFooter"></div>
+</body>
