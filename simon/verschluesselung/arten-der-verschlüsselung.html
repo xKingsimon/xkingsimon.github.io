@@ -20,23 +20,23 @@
     <div id="importNavbar"></div>
     <div id="wrapper">
         <h1 class="text-center">Arten der Verschlüsselung</h1>
-        <h2>Symetrische Verschlüsselung</h2>
-        <p>Bei der symetrischen Verschlüsselung wird für die Kommunikation zwischen zwei Partnern ein Schlüssel verwendet. Ursprünglich stammt diese Methode der Verschlüsselung aus der Zeit Caesars, er ließ jeden Buchstaben seiner Nachricht um 3 Buchstaben
-            im Alphabet verschieben, sodass die Nachricht, ohne zu wissen wie man sie entschlüsselt, nutzlos für Mitleser war.
-            <br> Moderne symetrische Verschlüsselungen funktionieren auf dem selben Prinzip, allerdings wird jeder Buchstabe mit einer anderen Zahl multipliziert, das Bedeuted entweder, dass der Schlüssel länger sein muss als die Nachricht oder er sich
-            wiederhohlt.
-            <br> Vorteil der symetrischen Verschlüsselungen ist der Rechenaufwand und dadurch die Geschwindigkeit, zu den Nachteilen gehört die Tatsache, dass man für jeden neuen Kommunikationspartner auch einen neuen Schlüssel braucht und dass die Schlüssel
+        <h2>symmetrische Verschlüsselung</h2>
+        <p>Bei der symmetrischen Verschlüsselung wird für die Kommunikation zwischen zwei Partnern ein Schlüssel verwendet. Ursprünglich stammt diese Methode der Verschlüsselung aus der Zeit Caesars, er ließ jeden Buchstaben seiner Nachricht um 3 Buchstaben
+            im Alphabet verschieben, sodass die Nachricht, ohne zu wissen, wie man sie entschlüsselt, nutzlos für Mitleser war.
+            <br> Moderne symmetrische Verschlüsselungen funktionieren auf demselben Prinzip, allerdings wird jeder Buchstabe mit einer anderen Zahl multipliziert, das bedeutet entweder, dass der Schlüssel länger sein muss als die Nachricht oder er sich
+            wiederholt.
+            <br> Vorteil der symmetrischen Verschlüsselungen ist der Rechenaufwand und dadurch die Geschwindigkeit. Zu den Nachteilen gehört die Tatsache, dass man für jeden neuen Kommunikationspartner auch einen neuen Schlüssel braucht und dass die Schlüssel
             irgendwie beim Empfänger landen müssen ohne, dass ein Mithörer ihn erhält.
         </p>
-        <h2>Asymetrische Verschlüsselung</h2>
-        <p>Zu den asymetrischen Verschlüsselungen gehört <span><a href="/simon/verschluesselung/RSA-Beispiel.html">RSA</a></span>. Bei der asymetrischen Verschlüsselung werden sich mathematische Eigenschaften und Probleme zu nutzen gemacht. Hierbei gibt
-            es einen privaten Schlüssel den nur der eigene Nutzer hat und einen öffentlichen Schlüssel, der einfach ungesichet dem Sender der Nachricht, vor dem Schreiben, gegeben werden kann. Der öffentliche Schlüssel kann zwar eine Nachricht verschlüsseln
+        <h2>Asymmetrische Verschlüsselung</h2>
+        <p>Zu den asymmetrischen Verschlüsselungen gehört <span><a href="/simon/verschluesselung/RSA-Beispiel.html">RSA</a></span>. Bei der asymmetrischen Verschlüsselung werden sich mathematische Eigenschaften und Probleme zu nutzen gemacht. Hierbei gibt
+            es einen privaten Schlüssel, den nur der eigene Nutzer hat und einen öffentlichen Schlüssel, der einfach ungesichert dem Sender der Nachricht, vor dem Schreiben, gegeben werden kann. Der öffentliche Schlüssel kann zwar eine Nachricht verschlüsseln,
             aber nur beide kombiniert können sie wieder entschlüsseln.
-            <br> Vorteil ist die Sicherheit und Anpassbarkeit die geboten werden kann, ist der Schlüssel nicht sicher genug kann man ihn einfach um ein paar Ziffern verlängern. Nachteil der asymetrischen Verschlüsselung ist die Rechenleistung die benötigt
-            wird um die Schlüssel zu generieren und um die Nachricht zu entschlüsseln.
+            <br> Vorteil ist die Sicherheit und Anpassbarkeit die geboten werden kann, ist der Schlüssel nicht sicher genug kann man ihn einfach um ein paar Ziffern verlängern. Nachteil der asymmetrischen Verschlüsselung ist die Rechenleistung, die benötigt
+            wird, um die Schlüssel zu generieren und um die Nachricht zu entschlüsseln.
         </p>
         <h2>Hybride Verschlüsselungen</h2>
-        <p>Hybride Verschlüsselungen nutzen das beste aus symetrischen und asymetrischen Verschlüsselungen. Damit eine Kommunikation zu stande kommt, wird der symetrische Schlüssel asymetrisch Verschlüsselt. Dadurch wird zwar zum Start einer Verbindung viel Rechenleistung verwendet, dannach kann aber der deutlich schnellere symetrische Schlüssel verwendet werden.</p>
+        <p>Hybride Verschlüsselungen nutzen das Beste aus symmetrischen und asymmetrischen Verschlüsselungen. Damit eine Kommunikation zustande kommt, wird der symmetrische Schlüssel asymmetrisch verschlüsselt. Dadurch wird zwar zum Start einer Verbindung viel Rechenleistung verwendet, danach kann aber der deutlich schnellere symmetrische Schlüssel verwendet werden.</p>
     </div>
     <div id="importFooter"></div>
 </body>
