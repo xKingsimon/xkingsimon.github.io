@@ -2,9 +2,9 @@ a.navbarLink {
     text-decoration: none;
     color: white;
     display: block;
-    padding: 20px;
+    padding: 12px;
     margin: 0px;
-    font-weight: 420;
+    font-weight: 400;
 }
 a.navbarLink:hover {
     color: #b9b9b9;
@@ -30,29 +30,32 @@ a.navbarLink:hover {
     display: block;
 }
 
-#navbar>ul li ul {
+#navbar>ul>li>ul {
     position: absolute;
     padding: 0px;
     display: none;
 }
 
-#navbar>ul li ul li {
+#navbar>ul>li>ul>li {
     background: var(--sky);
     display: block;
 }
 
-#navbar>ul li ul li a {
+#navbar>ul>li>ul>li>a {
     width: inherit;
     display: block !important;
     margin: 0px;
     min-width: 100px;
 }
 
-#navbar>ul li ul li:hover {
+#navbar>ul>li>ul>li:hover {
     background: var(--sky-select);
 }
 
 #navbar {
+    top: 0px;
+    width: 100%;
+    position: fixed;
     z-index: 1;
     overflow:hidden;
     background-color: var(--sky);
@@ -61,16 +64,10 @@ a.navbarLink:hover {
     transition: box-shadow 0.15s ease-in;
 }
 
-#navbarPlaceholder {
-    z-index: 2;
-}
-.sticky>ul>li>ul {
+#navbar>ul>li>ul {
     position: fixed !important;
 }
-.sticky {
-    top: 0px;
+.navbarShadow {
     box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px !important;
-    width: 100%;
-    position: fixed;
     transition: box-shadow 0.3s;
 }

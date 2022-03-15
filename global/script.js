@@ -1,37 +1,15 @@
-navHeight = 64;
 $(window).on('load', function () {
     $.getJSON("https://api.countapi.xyz/hit/johnsdorfer.de/visits", function (response) {
         $("#visits").text("Diese Seite wurde " + response.value + " mal geladen");
     });
     $("#importFooter").load("/global/footer.html")
     $("#importNavbar").load("/global/navbar.html", function () {
-        $(window).resize(calcNavPos);
-        calcNavPos();
         $(window).scroll(function () {
-            if (!$("#navbarBanner").length) {
-                calcNavPos();
-                $("#navbar").addClass("sticky");
-                $("#navbarPlaceholder").css("height", navHeight);
-                console.log(navHeight);
-            } else {
-                if ($(document).scrollTop() > navbbox_bot) {
-                    if (!$("#navbar").hasClass("sticky")) {
-                        $("#navbar").addClass("sticky");
-                        $("#navbarPlaceholder").css("height", navHeight);
-                    }
-                } else if ($(document).scrollTop() <= navbbox_bot) {
-                    $("#navbar").removeClass("sticky");
-                    $("#navbarPlaceholder").css("height", 0);
-                }
+            if ($(document).scrollTop() > 0) {
+                $("#navbar").addClass("navbarShadow");
+            } else if ($(document).scrollTop() <= 0) {
+                $("#navbar").removeClass("navbarShadow");
             }
         });
     });
 });
-
-function href(url) {
-    window.location.replace(url);
-}
-
-function calcNavPos() {
-    navbbox_bot = document.getElementById("navbarPlaceholder").getBoundingClientRect().bottom + window.scrollY;
-}
