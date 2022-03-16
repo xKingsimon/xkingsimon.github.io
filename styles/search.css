@@ -1,0 +1,23 @@
+#searchResults {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:20px;
+}
+.result {
+    width: 40%;
+    padding: 25px;
+    margin: 0;
+    overflow: hidden;
+    background-color: antiquewhite;
+}
+.result > p {
+    margin: 0px;
+}
+
+h1 {
+    font-size: 2em !important;
+}
+h2 {
+    font-size: 1em;
+}
