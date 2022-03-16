@@ -33,37 +33,6 @@ p,a {
 .moveRight {
   margin-left: 15px !important;
 }
-#navbarBanner {
-  overflow: hidden;
-  position: relative;
-  display: inline-block;
-}
-#navbarBanner > img {
-  object-fit: contain;
-  filter: blur(2.5px);
-  width: 100vw;
-  transition: filter ease-in-out 0.6s;
-}
-#navbarBanner:hover > img {
-  filter: none;
-}
-#navbarBanner > div {
-  position: absolute;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: calc(40% - 7vw);
-  text-align: center;
-  vertical-align: middle;
-  height: inherit;
-  width: 100%;
-}
-#navbarBanner > div > h1 {
-  font-family: "Praise", sans-serif;
-  font-size: 7vw;
-  color: black;
-  user-select: none;
-}
 .text-center {
   text-align: center;
 }
