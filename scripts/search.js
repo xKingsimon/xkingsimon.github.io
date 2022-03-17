@@ -25,25 +25,30 @@ const umlautMap = {
 urls = [];
 urlParams = new URLSearchParams(window.location.search);
 returnedArray = search(urlParams.get("s"));
-function search(text) {
-    text = replaceUmlaute(text.toLowerCase());
+function search(originalText) {
+    words = originalText.split(" ");
     result = [];
     resultIndex = -1
-    for (i = 0; i < searchArray.length; i++) {
-        console.log("search: Searching at i=" + i + " to i=" + (searchArray.length - 1));
-        var totalValue = 0;
-        for (h = 0; h < searchArray[i][1].length; h++) {
-            console.log("search: Testing if " + searchArray[i][1][h][0] + " == " + text);
-            if (searchArray[i][1][h][0] == text) {
-                console.log("search: Found " + text);
-                totalValue += searchArray[i][1][h][1]
+    for(x=0;x<words.length;x++)
+    {
+        text = replaceUmlaute(words[x].toLowerCase());
+        console.log("search: Starting for word "+x+" = "+text);
+        for (i = 0; i < searchArray.length; i++) {
+            console.log("  >search: Searching at i=" + i + " to i=" + (searchArray.length - 1));
+            var totalValue = 0;
+            for (h = 0; h < searchArray[i][1].length; h++) {
+                console.log("    >search: Testing if " + searchArray[i][1][h][0] + " == " + text);
+                if (searchArray[i][1][h][0] == text) {
+                    console.log("      >search: Found " + text);
+                    totalValue += searchArray[i][1][h][1]
+                }
             }
-        }
-        console.log("search: Search through i=" + i + " complete; resulted in a value of: " + totalValue)
-        if (totalValue > 0) {
-            resultIndex++;
-            var _array = [searchArray[i][0], totalValue];
-            result[resultIndex] = _array;
+            console.log("        >search: Search through i=" + i + " complete; resulted in a value of: " + totalValue)
+            if (totalValue > 0) {
+                resultIndex++;
+                var _array = [searchArray[i][0], totalValue];
+                result[resultIndex] = _array;
+            }
         }
     }
     if (result.length >= 1) {

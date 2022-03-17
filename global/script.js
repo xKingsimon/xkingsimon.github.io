@@ -1,10 +1,4 @@
 $(window).on('load', function () {
-    $("input").keydown(function (e) {
-        var inputValue = $(this).val();
-        if (e.which == 13) {
-            href("/search.html?s="+inputValue);
-        }
-    });
     $("#importFooter").load("/global/footer.html")
     $("#importNavbar").load("/global/navbar.html", function () {
         $(window).scroll(function () {
@@ -12,6 +6,13 @@ $(window).on('load', function () {
                 $("#navbar").addClass("navbarShadow");
             } else if ($(document).scrollTop() <= 0) {
                 $("#navbar").removeClass("navbarShadow");
+            }
+        });
+        $("#searchField").keydown(function (e) {
+            var inputValue = $(this).val();
+            console.log("clicked");
+            if (e.which == 13) {
+                href("/search.html?s="+inputValue);
             }
         });
     });
