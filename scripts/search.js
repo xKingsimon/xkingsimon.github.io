@@ -83,8 +83,8 @@ $(document).ready(function () {
                 return cutText($(this).text(), 380);
             });
             $(".result > #wrapper").wrapInner("<p>");
-            $(".result > #wrapper").prepend("<h1 class='searchResultHeadline' onclick='href(`" + url + "`);'>" + headline + "</h1>");
-            $(".result > #wrapper").append("<br><div class='flex'><a class='searchContinue' href='" + url + "'>Weiter lesen</a>");
+            $(".result > #wrapper").prepend("<h1 class='searchResultHeadline' onclick='href(`" + returnedArray[$(".searchScore").length][0] + "`);'>" + (1+$(".searchScore").length) +") "+ headline + "</h1>");
+            $(".result > #wrapper").append("<br><div class='flex'><a class='searchContinue' href='" + returnedArray[$(".searchScore").length][0] + "'>Weiter lesen</a>");
             $(".result > #wrapper > div").append("<p class='searchScore'>"+Math.round(returnedArray[$(".searchScore").length][1])+"/"+Math.round(totalScore)+ "     "+Math.round(returnedArray[$(".searchScore").length][1]/totalScore*1000)/10+ "%</a>");
             $(".result > #wrapper").contents().unwrap();
             MathJax.typeset();
