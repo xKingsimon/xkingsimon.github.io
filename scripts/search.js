@@ -7,7 +7,7 @@ searchArray = [
         [["mathe", 100], ["euklidischer", 150], ["algorithmus", 80]]
     ], [
         "/simon/mathe/gausssche-summenformel.html",
-        [["mathe", 100], ["gauss", 150], ["summenformel", 150]]
+        [["mathe", 100], ["gauss", 150], ["summenformel", 150],["sigma",80],["e",30]]
     ], [
         "/simon/mathe/produktzeichen.html",
         [["mathe", 100], ["produkt", 80], ["zeichen", 40], ["pi", 30]]
@@ -41,7 +41,7 @@ function search(originalText) {
                 var ld = levenshteinDistance(currentWord, text);
                 var weight = currentWeight / (1 + ld);
                 console.log(currentWeight+" "+currentWord+" / "+text+" "+ld+" "+weight);
-                if (ld <= (currentWord.length*0.75))
+                if (ld <= (currentWord.length*0.70))
                 {
                     totalValue += weight;
                 }
