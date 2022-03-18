@@ -3,6 +3,7 @@
 --sky-select: rgb(0, 64, 108);
 --sky: rgb(0, 84, 139);
 --sky-light: rgb(0, 100, 170);
+--sky-lighter: rgb(0, 155, 206);
 }
 body {
   margin: 0;
