@@ -54,5 +54,19 @@ h2 {
 .searchProgress {
     margin: auto 8px auto 8px;
     width: 100px;
-    height: 25px;
+    height: 20px;
+    -webkit-appearance: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+::-webkit-progress-value {
+    background-image: linear-gradient(45deg, #5bc0de 25%, #70d6f5 25%, #70d6f5 50%, #5bc0de 50%, #5bc0de 75%, #70d6f5 75%, #70d6f5 100%);
+    background-size: 15.00px 15.00px;
+}
+::-webkit-progress-bar {
+    background-color: white;
+}
+::-moz-progress-bar {
+    background-color: white;
 }
