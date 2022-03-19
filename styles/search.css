@@ -41,8 +41,18 @@ h2 {
     border-radius: 4px;
     padding: 6px;
     text-decoration: none;
+    margin: auto 0 auto 0;
     color: white;
 }
+
 .searchScore {
-    margin-left: auto;
+    margin: auto 8px auto auto;
+    height: auto;
+    font-size: 1.5em;
+}
+
+.searchProgress {
+    margin: auto 8px auto 8px;
+    width: 100px;
+    height: 25px;
 }

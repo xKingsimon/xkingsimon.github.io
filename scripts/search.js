@@ -98,7 +98,7 @@ function queueLoad(i) {
         $(".result > #wrapper").wrapInner("<p>");
         $(".result > #wrapper").prepend("<h1 class='searchResultHeadline' onclick='href(`" + returnedArray[i][0] + "`);'>" + (1+i) +") "+ headline + "</h1>");
         $(".result > #wrapper").append("<br><div class='flex'><a class='searchContinue' href='" + returnedArray[i][0] + "'>Weiter lesen</a>");
-        $(".result > #wrapper > div").append("<p class='searchScore'>"+Math.round(returnedArray[i][1]/totalScore*100)+ "%</a>");
+        $(".result > #wrapper > div").append("<p class='searchScore'>"+Math.round(returnedArray[i][1]/totalScore*100)+ "%</p><progress class='searchProgress' max='100' value='"+(returnedArray[i][1]/totalScore*100)+"'></progress>");
         $(".result > #wrapper").contents().unwrap();
         MathJax.typeset();
         deferred.resolve("f");
