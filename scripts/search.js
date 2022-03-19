@@ -25,6 +25,7 @@ const umlautMap = {
 urls = [];
 urlParams = new URLSearchParams(window.location.search);
 returnedArray = search(urlParams.get("s"));
+toBeLoaded = [];
 function search(originalText) {
     words = originalText.split(" ");
     result = [];
@@ -76,21 +77,34 @@ $(document).ready(function () {
     console.log("total score: "+totalScore);
     for (var i = 0; i < returnedArray.length; i++) {
         var url = returnedArray[i][0];
-        $('#searchResults').append($("<div class='result'>").load(returnedArray[i][0] + ' #wrapper', function () {
-            var headline = $(this).find("h1:first").text();
-            $(this).find("h1:first").remove();
-            $(".result > #wrapper").text(function () {
-                return cutText($(this).text(), 380);
-            });
-            $(".result > #wrapper").wrapInner("<p>");
-            $(".result > #wrapper").prepend("<h1 class='searchResultHeadline' onclick='href(`" + returnedArray[$(".searchScore").length][0] + "`);'>" + (1+$(".searchScore").length) +") "+ headline + "</h1>");
-            $(".result > #wrapper").append("<br><div class='flex'><a class='searchContinue' href='" + returnedArray[$(".searchScore").length][0] + "'>Weiter lesen</a>");
-            $(".result > #wrapper > div").append("<p class='searchScore'>"+Math.round(returnedArray[$(".searchScore").length][1])+"/"+Math.round(totalScore)+ "     "+Math.round(returnedArray[$(".searchScore").length][1]/totalScore*1000)/10+ "%</a>");
-            $(".result > #wrapper").contents().unwrap();
-            MathJax.typeset();
-        }));
+        toBeLoaded[toBeLoaded.length] = queueLoad(i);
+        Promise.all(toBeLoaded);
+        console.log("load done? "+$(".result").length)
     }
 });
+function queueLoad(i) {
+    console.log("start load")
+    var deferred = new $.Deferred();
+    totalScore=0;
+    for (var x = 0; x < returnedArray.length; x++) {
+        totalScore += returnedArray[x][1];
+    }
+    $('#searchResults').append($("<div class='result'>").load(returnedArray[i][0] + ' #wrapper', function () {
+        var headline = $(this).find("h1:first").text();
+        $(this).find("h1:first").remove();
+        $(".result > #wrapper").text(function () {
+            return cutText($(this).text(), 380);
+        });
+        $(".result > #wrapper").wrapInner("<p>");
+        $(".result > #wrapper").prepend("<h1 class='searchResultHeadline' onclick='href(`" + returnedArray[i][0] + "`);'>" + (1+i) +") "+ headline + "</h1>");
+        $(".result > #wrapper").append("<br><div class='flex'><a class='searchContinue' href='" + returnedArray[i][0] + "'>Weiter lesen</a>");
+        $(".result > #wrapper > div").append("<p class='searchScore'>"+Math.round(returnedArray[i][1]/totalScore*100)+ "%</a>");
+        $(".result > #wrapper").contents().unwrap();
+        MathJax.typeset();
+        deferred.resolve("f");
+    }));
+    return deferred.promise();
+}
 function cutText(input, x) {
     if (input.length > x) {
         for (i = x; i < input.length; i++) {
