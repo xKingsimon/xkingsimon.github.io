@@ -31,17 +31,14 @@ function search(originalText) {
     result = [];
     resultIndex = -1
     for (i = 0; i < searchArray.length; i++) {
-        console.log("                "+(i+1)+" / "+searchArray.length);
         var totalValue = 0;
         for (x = 0; x < words.length; x++) {
             text = replaceUmlaute(words[x].toLowerCase());
             for (_i = 0; _i < searchArray[i][1].length; _i++) {
-                console.log("      "+(_i+1)+" / "+searchArray[i][1].length)
                 var currentWeight = searchArray[i][1][_i][1];
                 var currentWord = searchArray[i][1][_i][0];
                 var ld = levenshteinDistance(currentWord, text);
                 var weight = currentWeight / (1 + ld);
-                console.log(currentWeight+" "+currentWord+" / "+text+" "+ld+" "+weight);
                 if (ld <= (currentWord.length*0.70))
                 {
                     totalValue += weight;
@@ -55,7 +52,6 @@ function search(originalText) {
         }
     }
     if (result.length >= 1) {
-        console.log(result.sort(compareArray));
         return result.sort(compareArray);
     } else {
         return -1;
@@ -74,16 +70,13 @@ $(document).ready(function () {
     for (var i = 0; i < returnedArray.length; i++) {
         totalScore += returnedArray[i][1];
     }
-    console.log("total score: "+totalScore);
     for (var i = 0; i < returnedArray.length; i++) {
         var url = returnedArray[i][0];
         toBeLoaded[toBeLoaded.length] = queueLoad(i);
         Promise.all(toBeLoaded);
-        console.log("load done? "+$(".result").length)
     }
 });
 function queueLoad(i) {
-    console.log("start load")
     var deferred = new $.Deferred();
     totalScore=0;
     for (var x = 0; x < returnedArray.length; x++) {

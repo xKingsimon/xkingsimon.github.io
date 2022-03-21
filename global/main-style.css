@@ -46,10 +46,12 @@ h1 {
 h2 {
   font-size: 1.7em;
 }
-
 #headline {
   font-family: Praise, arial;
   font-size: 130px;
   text-align: center;
   margin: 20px;
+}
+.MathJax_Display {
+  text-align: left !important;
 }

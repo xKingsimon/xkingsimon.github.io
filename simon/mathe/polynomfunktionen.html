@@ -1,0 +1,68 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/global/main-style.css" type="text/css">
+    <script src="/global/script.js"></script>
+    <meta charset="utf-8"></meta>
+    <meta name="description" content="Johnsdorfer.de Website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Simon Johnsdorfer">
+    <meta name="keywords" content="Markus, Markus Johnsdorfer, Johnsdorfer, Simon, Simon Johnsdorfer, modellbau, johnsdorfer, johnsdorfer.de">
+</head>
+
+<body>
+    <div id="importNavbar"></div>
+    <div id="wrapper">
+        <h1 class="text-center">Polynomfunktionen</h1>
+        <p>Polynomfunktionen sind alle Funktionen, welche als Koeffizient eine Rationale und als Exponent eine ganze positive Zahl haben. Für \(f(x)=ax^n\) gilt \(a\in\mathbb{Q}\) \(a\ne0\) \(n\in\mathbb{N}\). Man unterscheidet Polynome in ihren höchsten Exponenten.
+            Der jeweils höchste Exponent ist dabei der Grad des Polynoms.</p>
+        <h2>Beispiel</h2>
+        <p>\(f(x)=12x^6+3x^2+5\Rightarrow\) Polynom gehört zum 6ten Grad</p>
+        <p>\(g(x)=5x\Rightarrow\) Polynom gehört zum 1ten Grad</p>
+        <p>\(h(x)=3\Rightarrow\) Polynom gehört zum 0ten Grad</p>
+        <p>Wie man bereits erkennen kann gehören die linearen Funktionen zu den Polynomen des 1ten Grades und die quadratischen Funktionen zu dem 2ten Grad. Der bei quadratischen Funktionen Y-Achsenabstand genannte Wert ohne x heißt hier Absolutglied</p>
+        <h1>Globales Verhalten</h1>
+        <p>Polynome verhalten sich abhängig von Koeffizienten und Exponenten ganz unterschiedlich. Ihr Verhalten zu einem Grenzwert kann man einfach an dem Glied mit dem höchsten Exponenten ablesen. Hier unterschiedet man in 4 Kategorien.</p>
+        <br>
+        <h3>\(a\) Positiv \(b\) Gerade</h3>
+        <p>Der Grenzwert von \(f(x)\) für \(x\) gegen plus unendlich ist plus unendlich</p>
+        <p>Der Grenzwert von \(f(x)\) für \(x\) gegen minus unendlich ist plus unendlich</p>
+        <p>\(\lim_{x\to\pm\infty}f(x)=+\infty\)</p>
+        <p>Beispiel für \(f(x)=4x^6\)</p>
+        <img src="/images/polyBsp1.jpg" style="width: 400px;">
+        <br>
+        <h3>\(a\) Negativ \(b\) Gerade</h3>
+        <p>Der Grenzwert von \(f(x)\) für \(x\) gegen plus unendlich ist minus unendlich</p>
+        <p>Der Grenzwert von \(f(x)\) für \(x\) gegen minus unendlich ist minus unendlich</p>
+        <p>\(\lim_{x\to\pm\infty}f(x)=-\infty\)</p>
+        <p>Beispiel für \(f(x)=-2x^2\)</p>
+        <img src="/images/polyBsp2.jpg" style="width: 400px;">
+        <br>
+        <h3>\(a\) Positiv \(b\) Ungerade</h3>
+        <p>Der Grenzwert von \(f(x)\) für \(x\) gegen plus unendlich ist plus unendlich</p>
+        <p>Der Grenzwert von \(f(x)\) für \(x\) gegen minus unendlich ist minus unendlich</p>
+        <p>\(\lim_{x\to+\infty}f(x)=+\infty\)</p>
+        <p>\(\lim_{x\to-\infty}f(x)=-\infty\)</p>
+        <p>Beispiel für \(f(x)=3x^3\)</p>
+        <img src="/images/polyBsp3.jpg" style="width: 400px;">
+        <br>
+        <h3>\(a\) Negativ \(b\) Ungerade</h3>
+        <p>Der Grenzwert von \(f(x)\) für \(x\) gegen plus unendlich ist minus unendlich</p>
+        <p>Der Grenzwert von \(f(x)\) für \(x\) gegen minus unendlich ist plus unendlich</p>
+        <p>\(\lim_{x\to+\infty}f(x)=-\infty\)</p>
+        <p>\(\lim_{x\to-\infty}f(x)=+\infty\)</p>
+        <p>Beispiel für \(f(x)=-x^3+0.5x^2-0.1x+4\)</p>
+        <img src="/images/polyBsp4.jpg" style="width: 400px;">
+        <p>Bei dem letzen Beispiel kann man gut erkennen, dass für das globale Verhalten nur das Glied mit dem höchsten Exponenten zählt. Grund dafür ist, dass bei unendlich großen Werten für \(x\) der höchste Exponent als einziges ausschlagsgebend ist.</p>
+        <p>\(\lim_{x\to\infty}0.00...01x^2 > \lim_{x\to\infty}100...00x^1\)</p>
+        <h1>Symmetrie von Polynomen</h1>
+        <p>Polynome können entweder Achsensymmetrisch zur Y-Achse, Punktsymmetrisch, oder nicht Symmetrisch sein. Beide können rechnerisch bewiesen werden.</p>
+        <p>Ein Polynom \(f\) ist Y-Achsensymmetrisch, wenn \(f(x)=f(-x)\)</p>
+        <p>\(\frac{1}{2}(x^2-4)(x^4-1)=\frac{1}{2}((-x)^2-4)(-x)^4-1\)</p>
+        <p>Da \(x^n\) \(n\in2\mathbb{N}\Rightarrow\) n ist eine gerade Natürliche Zahl</p>
+    </div>
+    <div id="importFooter"></div>
+</body>
