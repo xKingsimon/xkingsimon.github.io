@@ -21,3 +21,11 @@
 #answer-field:focus {
  outline: none;
 }
+#length-number {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 2rem;
+    height: 1.5rem;
+}

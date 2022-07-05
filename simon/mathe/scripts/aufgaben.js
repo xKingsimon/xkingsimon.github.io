@@ -1,9 +1,15 @@
 currentFunctionLength = 0;
-expectedFunctionLength = 2;
+expectedFunctionLength = 4;
 func = 0;
 diff = 0;
 $(window).on('load', function () {
-    newFunction()
+    newFunction();
+    $("#length-number").on("input", function() {
+        expectedFunctionLength = this.value;
+    });
+    $("#reload-button").click(function() {
+        newFunction();
+    });
     $("#answer-submit").click(function() {
         var input = $("#answer-field").val();
         if(math.symbolicEqual(input,diff)) {
@@ -18,22 +24,24 @@ $(window).on('load', function () {
             }
         }
     });
-    MathJax.typesetPromise();
 });
 function createRandomFunction() {
     func = "";
     var i=0;
     while(currentFunctionLength < expectedFunctionLength) {
-        func += addFunctionPart(randomRange(1,3))
+        func += addFunctionPart(randomRange(1,4))
         i++;
     }
     return func.substring(1);
 }
 function addFunctionPart(type) {
     var output = ""
+    if (currentFunctionLength >= expectedFunctionLength) {
+        return "";
+    }
     switch(type) {
         case(1):
-            if (randomRange(1,3) == 4)
+            if (randomRange(1,3) < 3)
             {
                 output += randomOperator()+"x^"+randomRange(-6,6);
                 currentFunctionLength++;
@@ -48,15 +56,25 @@ function addFunctionPart(type) {
         break;
         case(3):
             var inside = ""
-            var repeat = randomRange(1,3)
+            var repeat = randomRange(1,4)
             for(var i=0;i<repeat;i++)
             {
-                inside += addFunctionPart(randomRange(1,2))
+                inside += addFunctionPart(randomRange(1,3))
+                currentFunctionLength++;
             }
             inside = inside.substring(1);
-            console.log("in: "+inside)
             output += randomOperator()+"sin("+inside+")";
-            currentFunctionLength++;
+        break;
+        case(4):
+            var inside = ""
+            var repeat = randomRange(1,4)
+            for(var i=0;i<repeat;i++)
+            {
+                inside += addFunctionPart(randomRange(1,3))
+                currentFunctionLength++;
+            }
+            inside = inside.substring(1);
+            output += randomOperator()+"log("+inside+")";
         break;
     }
     return output;
@@ -83,15 +101,11 @@ function randomRange(min,max) {
     return Math.round((Math.random()*(max-min))+min);
 }
 function newFunction() {
+    currentFunctionLength = 0;
     func = math.parse(createRandomFunction());
     console.log(func.toString())
     $("#question").text("$$"+math.parse(func.toString()).toTex()+"$$");
     diff = math.derivative(func,"x");
-    console.log(diff);
     $("#question2").text("$$"+math.parse(diff.toString()).toTex()+"$$");
-    const checkboxes = document.querySelectorAll('input[name="select-math-checkbox"]');
-
-    for (var i=0; i<checkboxes.length; i++) {
-        
-    }
+    MathJax.typesetPromise();
 }
