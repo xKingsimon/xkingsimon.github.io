@@ -1,26 +1,21 @@
 currentFunctionLength = 0;
 expectedFunctionLength = 2;
+func = 0;
+diff = 0;
 $(window).on('load', function () {
-    var x = createRandomFunction();
-    var aufgabeFunktion = nerdamer.convertFromLaTeX(x);
-    var string = aufgabeFunktion.toString();
-    $("#question").text("$$"+x+"$$");
-    console.log(nerdamer.convertToLaTeX(string))
-    var ableitung = nerdamer.diff(aufgabeFunktion,"x");
-    var ableitungString = ableitung.toString();
-    var ableitungVereifacht = nerdamer('simplify('+ableitungString+')');
-    var ableitungVereifachtString = ableitungVereifacht.toString();
-    $("#question2").text("$$"+ableitungString.toString()+"$$");
-    $("#question3").text("$$"+nerdamer.convertToLaTeX(ableitungVereifachtString)+"$$");
-    const checkboxes = document.querySelectorAll('input[name="select-math-checkbox"]');
-
-    for (var i=0; i<checkboxes.length; i++) {
-        
-    }
+    newFunction()
+    $("#answer-submit").click(function() {
+        var input = $("#answer-field").val();
+        if(math.symbolicEqual(input,diff)) {
+            newFunction();
+        }
+    });
     $("#answer-field").keydown(function (e) {
         var input = $(this).val();
         if (e.which == 13) {
-            console.log(nerdamer(input).eq(ableitung));
+            if(math.symbolicEqual(input,diff)) {
+                newFunction();
+            }
         }
     });
     MathJax.typesetPromise();
@@ -40,15 +35,15 @@ function addFunctionPart(type) {
         case(1):
             if (randomRange(1,3) == 4)
             {
-                output += randomOperator()+"{x^"+randomRange(-6,6)+"}";
+                output += randomOperator()+"x^"+randomRange(-6,6);
                 currentFunctionLength++;
             } else {
-                output += randomOperator()+"\\sqrt["+randomRange(2,10)+"]{x}";
+                output += randomOperator()+"x^("+randomRange(1,10)+"/"+randomRange(1,10)+")";
                 currentFunctionLength++;
             }
         break;
         case(2):
-            output += randomOperator()+"{e^x}";
+            output += randomOperator()+"e^x";
             currentFunctionLength++;
         break;
         case(3):
@@ -60,7 +55,7 @@ function addFunctionPart(type) {
             }
             inside = inside.substring(1);
             console.log("in: "+inside)
-            output += randomOperator()+"\\sin("+inside+")";
+            output += randomOperator()+"sin("+inside+")";
             currentFunctionLength++;
         break;
     }
@@ -86,4 +81,17 @@ function randomOperator() {
 }
 function randomRange(min,max) {
     return Math.round((Math.random()*(max-min))+min);
+}
+function newFunction() {
+    func = math.parse(createRandomFunction());
+    console.log(func.toString())
+    $("#question").text("$$"+math.parse(func.toString()).toTex()+"$$");
+    diff = math.derivative(func,"x");
+    console.log(diff);
+    $("#question2").text("$$"+math.parse(diff.toString()).toTex()+"$$");
+    const checkboxes = document.querySelectorAll('input[name="select-math-checkbox"]');
+
+    for (var i=0; i<checkboxes.length; i++) {
+        
+    }
 }
