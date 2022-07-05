@@ -1,0 +1,23 @@
+#answer-div {
+    display: flex;
+}
+#answer-div h2 {
+    margin: 15px;
+    margin-right: 15px;
+}
+#select-math {
+    display: flex;
+}
+#select-math > * {
+    display: inline;
+}
+#answer-field {
+    overflow: hidden;
+    font-size: 18px;
+    margin: 12px;
+    width: 100%; 
+    border: black 1px solid;
+}
+#answer-field:focus {
+ outline: none;
+}
