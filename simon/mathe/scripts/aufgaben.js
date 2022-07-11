@@ -4,6 +4,7 @@ func = 0;
 diff = 0;
 $(window).on('load', function () {
     newFunction();
+
     $("#length-number").on("input", function() {
         expectedFunctionLength = this.value;
     });
@@ -101,9 +102,11 @@ function randomRange(min,max) {
     return Math.round((Math.random()*(max-min))+min);
 }
 function newFunction() {
-    currentFunctionLength = 0;
-    func = math.parse(createRandomFunction());
-    console.log(func.toString())
+    do //No ln(e^x) or e^x/e^x -> Too easy!
+    {
+        currentFunctionLength = 0;
+        func = math.parse(createRandomFunction());
+    } while (math.symbolicEqual(math.derivative(func,"x"),0) || math.symbolicEqual(math.derivative(func,"x"),1));
     $("#question").text("$$"+math.parse(func.toString()).toTex()+"$$");
     diff = math.derivative(func,"x");
     $("#question2").text("$$"+math.parse(diff.toString()).toTex()+"$$");
