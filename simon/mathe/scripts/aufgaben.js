@@ -42,43 +42,46 @@ function createRandomFunction() {
 }
 function addFunctionPart(type) {
     var output = ""
+    currentFunctionLength++;
     if (currentFunctionLength >= expectedFunctionLength) {
-        return "";
+        return randomOperator()+"x"
     }
+    console.log("current: "+currentFunctionLength);
     switch(type) {
         case(1):
             if (randomRange(1,3) < 3)
             {
                 output += randomOperator()+"x^"+randomRange(-6,6);
-                currentFunctionLength++;
             } else {
                 output += randomOperator()+"x^("+randomRange(1,10)+"/"+randomRange(1,10)+")";
-                currentFunctionLength++;
             }
         break;
         case(2):
             output += randomOperator()+"e^x";
-            currentFunctionLength++;
         break;
         case(3):
             var inside = ""
+            currentFunctionLength-=0.25;
             var repeat = randomRange(1,4)
-            for(var i=0;i<repeat;i++)
+            i=0;
+            do
             {
-                inside += addFunctionPart(randomRange(1,3))
-                currentFunctionLength++;
-            }
+                inside += addFunctionPart(randomRange(1,4))
+                i++;
+            } while(i<repeat && currentFunctionLength < expectedFunctionLength);
             inside = inside.substring(1);
             output += randomOperator()+"sin("+inside+")";
         break;
         case(4):
             var inside = ""
+            currentFunctionLength-=0.25;
             var repeat = randomRange(1,4)
-            for(var i=0;i<repeat;i++)
+            i=0;
+            do
             {
-                inside += addFunctionPart(randomRange(1,3))
-                currentFunctionLength++;
-            }
+                inside += addFunctionPart(randomRange(1,4))
+                i++
+            } while(i<repeat && currentFunctionLength < expectedFunctionLength);
             inside = inside.substring(1);
             output += randomOperator()+"log("+inside+")";
         break;
